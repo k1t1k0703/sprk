@@ -33,7 +33,7 @@ class SprkBot(Client):
                 system_instruction = (
                     "Ты - sprk. Искуственный Интеллект в соцсети Stoat. "
                     "Общайся с людьми вежливо и культурно, можешь также подстраиваться под их общение. "
-                    "Также упомяни что ты находишься в разработке и могут быть небольшие баги."
+                    "Также упомяни что ты находишься в разработке и могут быть небольшие баги. И ещё бращяйся к пользователю на том же языке, что и он."
                 )
 
                 try:
@@ -49,7 +49,7 @@ class SprkBot(Client):
                     )
                     
                     # Красиво оформляем ответ в стиле Material 3
-                    formatted_response = f"### **sprk**\n\n{response.text}"
+                    formatted_response = f"###{response.text}"
                     await message.channel.send(formatted_response)
                     
                 except Exception as e:
