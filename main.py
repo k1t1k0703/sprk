@@ -4,7 +4,7 @@ from stoat import Client, Message
 from google import genai
 
 class SprkBot(Client):
-    def __init__(self, model_name="gemma2-9b-it"):
+    def __init__(self, model_name="gemma2-9b"):
         super().__init__()
         self.model_name = model_name
         # Забираем API-ключ Gemini из переменных окружения Railway
