@@ -10,8 +10,8 @@ class SprkBot(Client):
         # Забираем API-ключ Gemini из переменных окружения Railway
         self.ai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
-    async def on_ready(self):
-        print(f"✨ SPRK ИИ-помощник успешно запущен на Railway и подключен к Stoat!")
+        async def on_ready(self, *args, **kwargs):
+           print(f"✨ SPRK ИИ-помощник успешно запущен на Railway и подключен к Stoat!")
 
     async def on_message(self, message: Message):
         # Игнорируем сообщения от самого себя или других ботов
