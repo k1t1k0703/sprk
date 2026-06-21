@@ -4,7 +4,7 @@ from stoat import Client, Message
 from google import genai
 
 class SprkBot(Client):
-    def __init__(self, model_name="gemma2-9b"):
+    def __init__(self, model_name="gemini-2.5-flash"):
         super().__init__()
         self.model_name = model_name
         # Забираем API-ключ Gemini из переменных окружения Railway
@@ -25,7 +25,7 @@ class SprkBot(Client):
             
             # Если после триггера ничего не написали, не мучаем нейросеть
             if not user_prompt:
-                user_prompt = "Hi! >w<"
+                user_prompt = "Hi"
 
             # Включаем статус «печатает...» в Stoat
             async with message.channel.typing():
