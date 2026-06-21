@@ -49,7 +49,7 @@ class SprkBot(Client):
                     )
                     
                     # Красиво оформляем ответ в стиле Material 3
-                    formatted_response = f"###{response.text}"
+                    formatted_response = f"{response.text}"
                     await message.channel.send(formatted_response)
                     
                 except Exception as e:
