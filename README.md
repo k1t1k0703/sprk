@@ -1,44 +1,59 @@
 # sprk (Spark) ✨
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
-[![Platform: Stoat](https://img.shields.io/badge/Platform-Stoat-blue)](https://github.com/) 
 [![Engine: Gemini 2.5 Flash](https://img.shields.io/badge/Engine-Gemini%202.5%20Flash-orange)](https://deepmind.google/technologies/gemini/)
 
-> **sprk** — это кастомный, умный и очень милый (`>w<`) ИИ-ассистент для платформы Stoat, созданный на базе передовой языковой модели **Gemini 2.5 Flash**. Бот разработан для того, чтобы помогать пользователям с написанием кода, технологиями, отвечать на вопросы и просто поддерживать ламповую атмосферу в беседах.
+> **sprk** is a custom, smart, and very cute (`>w<`) AI assistant built for the Stoat platform, powered by the advanced **Gemini 2.5 Flash** language model. The bot is designed to help users with coding, tech questions, general inquiries, and to maintain a cozy, friendly atmosphere in chat channels.
 
 ---
 
-## 🛠 Технологический стек
+## Tech Stack
 
-Проект построен на минималистичном, но мощном наборе инструментов:
-* **Language:** Python 3.x 🐍
-* **LLM Core:** `google-genai` (API Gemini 2.5 Flash для быстрого инференса и высокой скорости ответов)
-* **Platform Integration:** `stoat` library (для бесшовной интеграции с экосистемой Stoat)
-
----
-
-## ⚙️ Архитектура и принцип работы
-
-Работа **sprk** делится на три ключевых этапа:
-
-1. **Перехват событий (Event Listening):** Бот работает в асинхронном режиме, отслеживая упоминания `@sprk` или прямые команды в текстовых каналах Stoat.
-2. **Контекстная обработка и Промптинг (LLM Processing):** * Текст запроса очищается от лишних артефактов.
-   * Формируется системный промпт, который задаёт боту его уникальный характер (дружелюбный, отзывчивый, использующий кавайные смайлики вроде `^.^` или `>w<`, но при этом остающийся строгим экспертом в разработке).
-   * Запрос отправляется к API Gemini 2.5 Flash.
-3. **Форматирование и доставка (Response Delivery):** Бот парсит ответ от модели, корректно экранирует блоки кода (Markdown/HTML) и отправляет структурированный ответ обратно в чат. В случае попытки запросить неприемлемый контент, срабатывает мягкий этический фильтр, перенаправляющий беседу в позитивное русло (например, предложение обсудить ретро-игры).
+The project is built using a minimalist yet powerful set of tools:
+* **Language:** Python 3.x 
+* **LLM Core:** `google-genai` (Gemini 2.5 Flash API for rapid inference and high-speed responses)
+* **Platform Integration:** The `stoat` library for seamless integration with the Stoat ecosystem
 
 ---
 
-## 🚀 Основные возможности
+## Architecture & How It Works
 
-* **Кодинг-ассистент:** Генерация и объяснение кода на любых языках (от чистого HTML/CSS в Material Design 3 до сложных скриптов на Python).
-* **Быстрый инференс:** Благодаря оптимизации Gemini 2.5 Flash, генерация ответов происходит за считанные секунды.
-* **Характер и атмосфера:** Бот не скучный — он умеет поддерживать контекст беседы, шутить и адаптироваться под тон общения.
-* **Безопасность и позитив:** Встроенные софт-фильтры для поддержания здоровой атмосферы в комьюнити.
+The workflow of **sprk** is divided into three key stages:
+
+1. **Event Listening:** The bot operates asynchronously, monitoring chat channels on Stoat for `@sprk` mentions or specific commands.
+2. **Context Processing & Prompting (LLM Processing):**
+   * The incoming request text is cleaned of unnecessary artifacts.
+   * A tailored system prompt is applied to establish the bot's unique personality (friendly, helpful, using cute emoticons like `^.^` or `>w<`, while maintaining strict technical expertise in software development).
+   * The structured prompt is sent directly to the Gemini 2.5 Flash API.
+3. **Response Delivery & Formatting:** The bot parses the model's output, properly formats code blocks (Markdown/HTML), and sends a well-structured response back to the chat. If a user requests inappropriate content, a soft ethical filter triggers to gently redirect the conversation into a positive direction (e.g., suggesting to discuss retro video games instead).
 
 ---
 
-## 📊 Результаты работы (Скриншоты)
+## Key Features
 
-### 1. Помощь в разработке и генерация кода
-Бот отлично справляется с техническими тасками, аккуратно оформляя синтаксис:
+* **Coding Assistant:** Generates and explains code across various languages (from clean HTML/CSS styled in Material Design 3 to complex Python scripts).
+* **Fast Inference:** Thanks to the optimization of Gemini 2.5 Flash, response generation takes only a few seconds.
+* **Personality & Atmosphere:** Far from boring—the bot tracks conversation context, jokes around, and easily adapts to the tone of the chat.
+* **Safety & Positivity:** Built-in soft filtering mechanisms to maintain a healthy and welcoming community environment.
+
+---
+
+## Install
+1. Clone the repository:
+```
+git clone [https://github.com/k1t1k0703/sprk.git](https://github.com/k1t1k0703/sprk.git)
+cd sprk
+```
+2. Install the required dependencies:
+```
+pip install -r requirements.txt
+```
+3. Configure your environment variables in a `.env` file:
+```
+GEMINI_API_KEY=your_gemini_api_key_here
+STOAT_TOKEN=your_stoat_bot_token_here
+```
+4. Run:
+```
+python main.py
+```
